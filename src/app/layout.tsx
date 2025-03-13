@@ -5,6 +5,8 @@ import { cn } from "@/lib/utils";
 import { SiteHeader } from "@/components/site-header";
 import { siteConfig } from "@/config/site";
 
+import { QueryProvider } from "@/providers/query-provider";
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -34,10 +36,12 @@ export default function RootLayout({
           "bg-slate-100"
         )}
       >
-        <div className="container bg-slate-50 mx-auto max-w-5xl min-h-screen flex flex-col gap-8">
-          <SiteHeader />
-          <div className="h-full flex-1 px-4">{children}</div>
-        </div>
+        <QueryProvider>
+          <div className="container bg-slate-50 mx-auto max-w-5xl min-h-screen flex flex-col gap-8">
+            <SiteHeader />
+            <div className="h-full flex-1 px-4">{children}</div>
+          </div>
+        </QueryProvider>
       </body>
     </html>
   );
