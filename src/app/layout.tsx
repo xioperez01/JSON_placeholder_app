@@ -4,6 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { SiteHeader } from "@/components/site-header";
 import { siteConfig } from "@/config/site";
+import { Toaster } from "sonner";
 
 import { QueryProvider } from "@/providers/query-provider";
 
@@ -36,6 +37,7 @@ export default function RootLayout({
           "bg-slate-100"
         )}
       >
+        <Toaster position="top-center" />
         <QueryProvider>
           <div className="container bg-slate-50 mx-auto max-w-5xl min-h-screen flex flex-col gap-8">
             <SiteHeader />

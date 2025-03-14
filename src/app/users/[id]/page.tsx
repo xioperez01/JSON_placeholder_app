@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import UserPosts from "@/components/users/user-posts";
 import UserPostsSkeleton from "@/components/users/user-posts-skeleton";
 import UserProfileDetail from "@/components/users/user-profile-detail";
+import DetailCardSkeleton from "@/components/detail-card-skeleton";
 import { ChevronsLeft } from "lucide-react";
 import Link from "next/link";
 import React, { Suspense } from "react";
@@ -13,8 +14,10 @@ export default async function UserDetailPage({
 }: {
   params: { id: string };
 }) {
-  const user = await fetchUser(params.id);
-  const posts = await fetchUserPosts(params.id);
+  const [user, posts] = await Promise.all([
+    fetchUser(params.id),
+    fetchUserPosts(params.id),
+  ]);
 
   return (
     <div className="space-y-6">
@@ -29,7 +32,7 @@ export default async function UserDetailPage({
       </div>
 
       <div className="grid gap-6 md:grid-cols-3">
-        <Suspense fallback={<UserPostsSkeleton />}>
+        <Suspense fallback={<DetailCardSkeleton />}>
           <UserProfileDetail user={user} />
         </Suspense>
         <div className="space-y-4">

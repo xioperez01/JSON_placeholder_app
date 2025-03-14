@@ -7,6 +7,7 @@ import {
 
 import { API_BASE_URL } from "@/api/shared";
 import { Post } from "@/types/posts";
+import { Comment } from "@/types/comments";
 
 export async function fetchPostsList(
   searchParams: ListPageSearchParams
@@ -34,3 +35,38 @@ export async function fetchPostsList(
     hasNextPage: posts.length === pageSize,
   };
 }
+
+export async function fetchPost(
+  id: string
+): Promise<{ post: Post; user: { name: string; id: string } }> {
+  const response = await fetch(`${API_BASE_URL}/posts/${id}`);
+  if (!response.ok) {
+    throw new Error(`Error al obtener el post ${id}`);
+  }
+
+  const post = await response.json();
+
+  const user = await fetch(`${API_BASE_URL}/users/${post.userId}`);
+  if (!user.ok) {
+    throw new Error(
+      `Error al obtener el usuario ${post.userId} para el post ${id}`
+    );
+  }
+  return { post, user: await user.json() };
+}
+
+export async function fetchPostComments(postId: string): Promise<Comment[]> {
+  const response = await fetch(`${API_BASE_URL}/posts/${postId}/comments`);
+  if (!response.ok) {
+    throw new Error(`Error al obtener los comentarios para el post ${postId}`);
+  }
+  return response.json();
+}
+
+//export async function getUserPosts(userId: string): Promise<Post[]> {
+//  const response = await fetch(`${API_BASE_URL}/users/${userId}/posts`);
+//  if (!response.ok) {
+//    throw new Error(`Failed to fetch posts for user ${userId}`);
+//  }
+//  return response.json();
+//}
