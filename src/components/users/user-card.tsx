@@ -1,5 +1,5 @@
 import { AtSign, Phone, Globe } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import {
   Card,
   CardHeader,
@@ -38,10 +38,13 @@ export default function UserCard({ user }: { user: User }) {
           </Link>
         </div>
       </CardContent>
-      <CardFooter>
-        <Button asChild>
-          <Link href={`/users/${user.id}`}>Ver Detalle</Link>
-        </Button>
+      <CardFooter className="flex justify-end">
+        <Link
+          className={buttonVariants({ size: "sm" })}
+          href={`/users/${user.id}`}
+        >
+          Ver Detalle
+        </Link>
       </CardFooter>
     </Card>
   );

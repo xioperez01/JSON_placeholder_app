@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { Button } from "./ui/button";
-import { ArrowDownAZ, ArrowUpAZ } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
 import { usePathname, useSearchParams, useRouter } from "next/navigation";
 import { SORT } from "@/types/shared";
+import { Icons } from "@/components/icons";
 
 export default function OrderListButton() {
   const router = useRouter();
@@ -33,9 +34,9 @@ export default function OrderListButton() {
         onClick={() => handleSort()}
       >
         {sortBy === "asc" ? (
-          <ArrowUpAZ className="h-4 w-4" />
+          <Icons.asc className="h-4 w-4" />
         ) : (
-          <ArrowDownAZ className="h-4 w-4" />
+          <Icons.desc className="h-4 w-4" />
         )}
       </Button>
     </div>

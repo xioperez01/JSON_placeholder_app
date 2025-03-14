@@ -1,12 +1,13 @@
 import React, { Suspense } from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { ChevronsLeft, MessageSquare } from "lucide-react";
+import {  MessageSquare } from "lucide-react";
 import { fetchPost, fetchPostComments } from "@/api/posts";
 import DetailCardSkeleton from "@/components/detail-card-skeleton";
 import PostDetailCard from "@/components/posts/post-detail-card";
 import CommentsSkeleton from "@/components/posts/comments-skeleton";
 import CommentList from "@/components/posts/comments-list";
+import { Icons } from "@/components/icons";
 
 export default async function PostDetailPage({
   params,
@@ -23,7 +24,7 @@ export default async function PostDetailPage({
       <div className="flex items-center gap-4">
         <Button variant="ghost" size="icon" asChild>
           <Link href="/posts">
-            <ChevronsLeft className="h-4 w-4" />
+            <Icons.backToPage className="h-4 w-4" />
             <span className="sr-only">Back to Posts</span>
           </Link>
         </Button>

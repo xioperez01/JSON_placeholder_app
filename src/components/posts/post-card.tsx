@@ -7,7 +7,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { Post } from "@/types/posts";
 import { User } from "lucide-react";
 
@@ -41,10 +41,13 @@ export default function PostCard({
           {post.body}
         </p>
       </CardContent>
-      <CardFooter>
-        <Button asChild>
-          <Link href={`/posts/${post.id}`}>Ver Detalle</Link>
-        </Button>
+      <CardFooter className="flex justify-end">
+        <Link
+          className={buttonVariants({ size: "sm" })}
+          href={`/posts/${post.id}`}
+        >
+          Ver Detalle
+        </Link>
       </CardFooter>
     </Card>
   );

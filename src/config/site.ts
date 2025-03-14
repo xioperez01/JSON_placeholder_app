@@ -3,8 +3,8 @@ import { Icons } from "@/components/icons";
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "El Sol",
-  description: "Prueba técnica para El Sol",
+  name: "JSONPlaceholder App",
+  description: "Aplicación Next.js 14 que consume la API JSONPlaceholder",
   mainNav: [
     {
       title: "Usuarios",

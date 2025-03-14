@@ -1,4 +1,9 @@
 import {
+  ArrowDownAZ,
+  ArrowUpAZ,
+  ChevronLeft,
+  ChevronRight,
+  ChevronsLeft,
   Eye,
   Loader2,
   LucideProps,
@@ -16,4 +21,9 @@ export const Icons = {
     <Loader2 className="animate-spin" {...props} />
   ),
   view: Eye,
+  backToPage: ChevronsLeft,
+  asc: ArrowUpAZ,
+  desc: ArrowDownAZ,
+  next: ChevronLeft,
+  prev: ChevronRight,
 };

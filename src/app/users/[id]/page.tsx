@@ -5,9 +5,9 @@ import UserPosts from "@/components/users/user-posts";
 import UserPostsSkeleton from "@/components/users/user-posts-skeleton";
 import UserProfileDetail from "@/components/users/user-profile-detail";
 import DetailCardSkeleton from "@/components/detail-card-skeleton";
-import { ChevronsLeft } from "lucide-react";
 import Link from "next/link";
 import React, { Suspense } from "react";
+import { Icons } from "@/components/icons";
 
 export default async function UserDetailPage({
   params,
@@ -24,7 +24,7 @@ export default async function UserDetailPage({
       <div className="flex items-center gap-4">
         <Button variant="ghost" size="icon" asChild>
           <Link href="/users">
-            <ChevronsLeft className="h-4 w-4" />
+            <Icons.backToPage className="h-4 w-4" />
             <span className="sr-only">Back to users</span>
           </Link>
         </Button>

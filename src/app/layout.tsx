@@ -33,15 +33,16 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          `${geistSans.variable} ${geistMono.variable} antialiased`,
-          "bg-slate-100"
+          `${geistSans.variable} ${geistMono.variable} antialiased`
         )}
       >
         <Toaster position="top-center" />
         <QueryProvider>
-          <div className="container bg-slate-50 mx-auto max-w-5xl min-h-screen flex flex-col gap-8">
+          <div className="bg-stone-100  min-h-screen flex flex-col gap-8">
             <SiteHeader />
-            <div className="h-full flex-1 px-4 pb-4">{children}</div>
+            <div className="container h-full flex-1 px-4 pb-4 mx-auto max-w-5xl">
+              {children}
+            </div>
           </div>
         </QueryProvider>
       </body>

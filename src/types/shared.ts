@@ -3,6 +3,7 @@ export type ListPageSearchParams = {
   pageNumber?: number;
   search?: string;
   sort?: "asc" | "desc";
+  userId?: number;
 };
 
 export const PAGE_SIZE = 5;

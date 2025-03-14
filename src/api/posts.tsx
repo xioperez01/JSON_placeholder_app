@@ -17,6 +17,7 @@ export async function fetchPostsList(
     pageSize = PAGE_SIZE,
     pageNumber = PAGE_NUMBER,
     sort = SORT,
+    userId,
   } = searchParams;
 
   const start = (pageNumber - 1) * pageSize;
@@ -24,6 +25,8 @@ export async function fetchPostsList(
   let url = `${API_BASE_URL}/posts?_start=${start}&_limit=${pageSize}&_sort=title&_order=${sort}`;
 
   if (search) url = `${url}&title_like=${search}`;
+
+  if (userId) url = `${url}&userId=${userId}`;
 
   const res = await fetch(`${url}`);
   if (!res.ok) throw new Error("Error al obtener las publicaciones");

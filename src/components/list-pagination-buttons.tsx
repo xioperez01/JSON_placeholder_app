@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+
 import { usePathname, useSearchParams, useRouter } from "next/navigation";
 import {
   Select,
@@ -10,6 +10,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { PAGE_NUMBER, PAGE_SIZE } from "@/types/shared";
+import { Icons } from "@/components/icons";
 
 const pageSizeOptions = [
   { value: 5, label: "5" },
@@ -77,7 +78,7 @@ export default function ListPaginationButtons({
           onClick={() => handlePage(pageNumber - 1)}
           disabled={pageNumber === 1}
         >
-          <ChevronLeft className="h-4 w-4" />
+          <Icons.next className="h-4 w-4" />
         </Button>
         <Button
           size="icon"
@@ -85,7 +86,7 @@ export default function ListPaginationButtons({
           onClick={() => handlePage(pageNumber + 1)}
           disabled={!hasNextPage}
         >
-          <ChevronRight className="h-5 w-5" />
+          <Icons.prev className="h-5 w-5" />
         </Button>
       </div>
     </div>
