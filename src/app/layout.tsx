@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { SiteHeader } from "@/components/site-header";
@@ -7,17 +7,7 @@ import { siteConfig } from "@/config/site";
 import { Toaster } from "sonner";
 
 import { QueryProvider } from "@/providers/query-provider";
-
-const geistSans = localFont({
-  src: "../fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "../fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+import { fontSans, fontTitle } from "@/lib/fonts";
 
 export const metadata: Metadata = {
   title: siteConfig.name,
@@ -33,7 +23,9 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          `${geistSans.variable} ${geistMono.variable} antialiased`
+          "font-sans antialiased",
+          fontSans.variable,
+          fontTitle.variable
         )}
       >
         <Toaster position="top-center" />
