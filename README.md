@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# JSONPlaceholder App
 
-## Getting Started
+Una aplicación desarrollada con Next.js 14 que consume datos de la API de JSONPlaceholder, construida con React 18, TypeScript y TanStack Query.
 
-First, run the development server:
+## Instalación
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Clone el repositorio y vaya hasta el directorio del proyecto:
+
+```sh
+git clone https://github.com/xioperez01/JSON_placeholder_app.git
+cd JSON_placeholder_app
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Instale las dependencias del proyecto
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```sh
+npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Para correr el proyecto en modo desarrollo:
 
-## Learn More
+```sh
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+y abra [http://localhost:3000](http://localhost:3000) en su navegador para ver el resultado
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Funcionalidades
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Lista de usuarios con opciones de filtrado
+- Página de detalles de usuario con información adicional
+- Lista de publicaciones con opciones de ordenamiento y filtrado
+- Página de detalles de publicación con comentarios
+- Formulario para agregar nuevos comentarios (solo en el cliente)
+- Diseño responsivo con Tailwind CSS y componentes de shadcn/ui
 
-## Deploy on Vercel
+## Stack Tecnológico
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Next.js 14:** Uso de App Router para enrutamiento basado en archivos
+- **React 18:** Para la construcción de la interfaz de usuario
+- **TypeScript:** Para garantizar seguridad en los tipos
+- **TanStack Query:** Para la obtención de datos, almacenamiento en caché y gestión de estado
+- **Tailwind CSS:** Para estilos
+- **shadcn/ui:** Para componentes de interfaz de usuario
+- **Lucide React:** Para iconos
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Estructura del Proyecto
