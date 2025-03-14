@@ -65,11 +65,3 @@ export async function fetchPostComments(postId: string): Promise<Comment[]> {
   }
   return response.json();
 }
-
-//export async function getUserPosts(userId: string): Promise<Post[]> {
-//  const response = await fetch(`${API_BASE_URL}/users/${userId}/posts`);
-//  if (!response.ok) {
-//    throw new Error(`Failed to fetch posts for user ${userId}`);
-//  }
-//  return response.json();
-//}
