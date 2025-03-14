@@ -4,7 +4,7 @@ import { API_BASE_URL } from "./shared";
 import { Post } from "@/types/posts";
 
 export async function fetchUsersList(
-  searchParams: ListPageSearchParams
+  searchParams?: ListPageSearchParams
 ): Promise<User[]> {
   const { search } = {
     ...searchParams,

@@ -2,7 +2,7 @@ import React, { Suspense } from "react";
 import { fetchUsersList } from "@/api/users";
 import UsersList from "@/components/users/users-list";
 import { ListPageSearchParams } from "@/types/shared";
-import UsersListSkeleton from "@/components/users/users-list-skeleton";
+import ListSkeleton from "@/components/list-skeleton";
 
 export default async function UsersPage({
   searchParams,
@@ -20,7 +20,7 @@ export default async function UsersPage({
         </p>
       </div>
 
-      <Suspense fallback={<UsersListSkeleton />}>
+      <Suspense fallback={<ListSkeleton />}>
         <UsersList initialData={users} searchParams={searchParams} />
       </Suspense>
     </div>

@@ -39,7 +39,7 @@ export default function RootLayout({
         <QueryProvider>
           <div className="container bg-slate-50 mx-auto max-w-5xl min-h-screen flex flex-col gap-8">
             <SiteHeader />
-            <div className="h-full flex-1 px-4">{children}</div>
+            <div className="h-full flex-1 px-4 pb-4">{children}</div>
           </div>
         </QueryProvider>
       </body>

@@ -3,7 +3,7 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { Input } from "@/components/ui/input";
 
-export default function InputSearch() {
+export default function InputSearch({ placeholder }: { placeholder?: string }) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const pathname = usePathname();
@@ -25,7 +25,7 @@ export default function InputSearch() {
   return (
     <div className="max-w-sm">
       <Input
-        placeholder="Filtrar por nombre y nombre de usuario..."
+        placeholder={placeholder || "Filtrar por nombre y nombre de usuario..."}
         value={toSearch}
         onChange={(e) => setToSearch(e.target.value)}
         className="w-full"

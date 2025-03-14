@@ -26,7 +26,7 @@ export default function UsersList({
         </p>
       ) : (
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {initialData.map((user) => (
+          {data.map((user) => (
             <UserCard key={user.id} user={user} />
           ))}
         </div>

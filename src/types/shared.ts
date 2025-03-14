@@ -1,11 +1,10 @@
 export type ListPageSearchParams = {
   pageSize?: number;
-  page?: number;
+  pageNumber?: number;
   search?: string;
+  sort?: "asc" | "desc";
 };
 
-export const defaultSearchParams: Required<ListPageSearchParams> = {
-  pageSize: 10,
-  page: 1,
-  search: "",
-};
+export const PAGE_SIZE = 5;
+export const PAGE_NUMBER = 1;
+export const SORT = "asc";
